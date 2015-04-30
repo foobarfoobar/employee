@@ -9,6 +9,12 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      # format.json render json: @employees
+      format.js # index.js.erb  # Anweisung Javascript akzeptieren fuer AJAX
+    end
   end
 
   # GET /employees/1
