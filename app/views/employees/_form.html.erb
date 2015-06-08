@@ -1,4 +1,5 @@
 <%= form_for(@employee) do |f| %>
+<!-- form_for erkennt ob neu oder edit und setzt richtige action -->
   <% if @employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -12,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
+    <%= f.label :firstname%><br>
+    <%= f.text_field :firstname, disabled: true  %>
   </div>
   <div class="field">
     <%= f.label :lastname %><br>
@@ -29,7 +30,11 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, size: "20x14" %> <!-- 20 Spalten, 14 Zeilen -->
+  </div>
+  <div class="field">
+    <%= f.label :freelancer %><br>
+    <%= f.check_box :freelancer %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -34,6 +34,8 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    # nicht noetig wegen before_action
+    # @employee = Employee.find(params[:id])
   end
 
   # POST /employees
