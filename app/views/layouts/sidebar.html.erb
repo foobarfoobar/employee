@@ -1,0 +1,7 @@
+<div id="sidebar">
+	<% if content_for?(:sidebar) %>
+	<%= yield(:sidebar) %>
+	<% else %>
+	keine Links
+	<% end %>
+</div>

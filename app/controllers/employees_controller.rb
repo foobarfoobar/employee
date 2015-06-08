@@ -4,6 +4,11 @@ class EmployeesController < ApplicationController
   # http_basic_authenticate_with name: "admin", password: "geheim", only: [:edit, :update, :destroy]
   # passwortabfrage auch fuer show (alles ausser index..)
   http_basic_authenticate_with name: "admin", password: "geheim", except: [:index]
+  
+  # before_action call method before the actions which we declare, like
+  # before_action :set_event, only: [:show, :update, :destroy, :edit]
+  # set_event is a method which will call always before show, update, edit and destroy.
+  # somit kann edit leer bleiben und die Form ist trotzdem mit den jeweiligen Werten gefuellt
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
   # GET /employees
   # GET /employees.json

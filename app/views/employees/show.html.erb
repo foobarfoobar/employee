@@ -25,5 +25,8 @@
   <%= @employee.comment %>
 </p>
 
+<% content_for :sidebar do %>
+<!-- durch die redirects wirft 'show' einen Fehler -->
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
+<% end %>
