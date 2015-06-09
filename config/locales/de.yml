@@ -1,0 +1,19 @@
+de:
+  activerecord:
+    models:
+      employee: "Mitarbeiter"
+    attributes:
+      employee:
+        title: "Titel"
+        firstname: "Vorname"
+        lastname: "Nachname"
+        birthday: "Geburtstag"
+        email: "eMail"
+        comment: "Kommentar"
+        created_at: "Erstellt am"
+        updated_at: "Geaendert am"
+  links:
+    show: "Zeigen"
+    edit: "Bearbeiten"
+    destroy: "Loeschen"
+    back_to_employees: "Zurück zur Liste"

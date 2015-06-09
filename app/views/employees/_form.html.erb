@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname%><br>
-    <%= f.text_field :firstname, disabled: true  %>
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
   </div>
   <div class="field">
     <%= f.label :lastname %><br>
@@ -23,6 +23,7 @@
   <div class="field">
     <%= f.label :birthday %><br>
     <%= f.date_select :birthday, start_year: Time.now.year - 100, end_year: Time.now.year %>
+    <!-- <%= f.date_select :birthday, :order => [:year, :month, :day], start_year: Time.now.year - 100, end_year: Time.now.year, :locale => 'de' %> -->
   </div>
   <div class="field">
     <%= f.label :email %><br>

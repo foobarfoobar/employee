@@ -1,32 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Firstname:</strong>
+  <strong><%= t("activerecord.attributes.employee.firstname") %>:</strong>
   <%= @employee.firstname %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
+  <strong><%= t("activerecord.attributes.employee.lastname") %>:</strong>
   <%= @employee.lastname %>
 </p>
 
 <p>
-  <strong>Birthday:</strong>
+  <strong><%= t("activerecord.attributes.employee.birthday") %>:</strong>
   <%= @employee.birthday %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong><%= t("activerecord.attributes.employee.email") %>:</strong>
   <%= @employee.email %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong><%= t("activerecord.attributes.employee.comment") %>:</strong>
   <%= @employee.comment %>
 </p>
 
 <% content_for :sidebar do %>
-<!-- durch die redirects wirft 'show' einen Fehler -->
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+  <%= render "links" %>
 <% end %>

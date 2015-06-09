@@ -4,11 +4,11 @@
 <table>
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Birthday</th>
-      <th>Email</th>
-      <th>Comment</th>
+      <th><%= t("activerecord.attributes.employee.firstname") %></th>
+      <th><%= t("activerecord.attributes.employee.lastname") %></th>
+      <th><%= t("activerecord.attributes.employee.birthday") %></th>
+      <th><%= t("activerecord.attributes.employee.email") %></th>
+      <th><%= t("activerecord.attributes.employee.comment") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +24,10 @@
         <!-- Braucht email-Spalte in DB; encode: um Scannen zu erschweren, 
         	Werte: hex oder javascript --> 
         <td><%= mail_to "employee.email", 'Nachricht senden', encode: "hex" %></td>
-        <td><%= button_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- Button methode ist automatisch POST, macht routing-Probleme, daher method: get angeben -->
+        <td><%= button_to t("links.show"), employee, :method => :get %></td>
+        <td><%= link_to t("links.edit"), edit_employee_path(employee) %></td>
+        <td><%= link_to t("links.destroy"), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
