@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609092539) do
+ActiveRecord::Schema.define(version: 20150609113919) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150609092539) do
     t.boolean  "freelancer"
     t.string   "title"
     t.integer  "department_id"
+    t.string   "country"
   end
 
 end

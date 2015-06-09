@@ -11,6 +11,7 @@ de:
         email: "eMail"
         comment: "Kommentar"
         department_id: "Department ID"
+        country: "Land"
         created_at: "Erstellt am"
         updated_at: "Geaendert am"
   links:

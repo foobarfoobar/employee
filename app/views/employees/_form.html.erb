@@ -46,6 +46,11 @@
     <%= f.text_area :comment, size: "20x14" %> <!-- 20 Spalten, 14 Zeilen -->
   </div>
   <div class="field">
+    <%= f.label :country %><br>
+    <!-- Laenderliste vom gem 'country_select', unten angebene Laender stehen am Anfang der Liste -->
+    <%= f.country_select :country, %w(Germany France Russia) %>
+  </div>
+  <div class="field">
     <%= f.label :freelancer %><br>
     <%= f.check_box :freelancer %>
   </div>

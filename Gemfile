@@ -14,7 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'rails-i18n'
+gem 'rails-i18n' #needed for date_select
+gem 'country_select' #provides a list with all countries exists
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
