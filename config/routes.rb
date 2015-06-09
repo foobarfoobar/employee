@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :employees
   resources :departments
 
   # scope "(:locale)", locale: /en|de/ do
-     resources :employees
      # post "employees/:id"
   # end
 

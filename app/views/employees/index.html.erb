@@ -9,6 +9,7 @@
       <th><%= t("activerecord.attributes.employee.birthday") %></th>
       <th><%= t("activerecord.attributes.employee.email") %></th>
       <th><%= t("activerecord.attributes.employee.comment") %></th>
+      <th><%= t("activerecord.attributes.employee.department_id") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
         <td><%= employee.birthday %></td>
         <td><%= employee.email %></td>
         <td><%= employee.comment %></td>
+        <td><%= employee.department_id %></td>
         <!-- Braucht email-Spalte in DB; encode: um Scannen zu erschweren, 
         	Werte: hex oder javascript --> 
         <td><%= mail_to "employee.email", 'Nachricht senden', encode: "hex" %></td>
