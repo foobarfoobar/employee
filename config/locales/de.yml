@@ -17,3 +17,9 @@ de:
     edit: "Bearbeiten"
     destroy: "Loeschen"
     back_to_employees: "Zurück zur Liste"
+  text:
+    woman: "Frau"
+    woman_doc: "Frau Dr."
+    man: "Herr"
+    man_doc: "Herr Dr."
+    choose: "Bitte wählen"

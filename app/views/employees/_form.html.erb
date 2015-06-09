@@ -13,6 +13,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :title, "Anrede" %><br>
+    <!-- Zugriff auf Konstante in Klasse Employee -->
+    <%= f.select :title, Employee::TITLES, include_blank: true, prompt: t("text.choose") %>
+  </div>
+  <div class="field">
     <%= f.label :firstname %><br>
     <%= f.text_field :firstname %>
   </div>
@@ -22,7 +27,8 @@
   </div>
   <div class="field">
     <%= f.label :birthday %><br>
-    <%= f.date_select :birthday, start_year: Time.now.year - 100, end_year: Time.now.year %>
+    <%= f.date_select :birthday, start_year: Time.now.year - 100, end_year: Time.now.year, include_blank: true %>
+    <!-- include_blank: added leerzeile, somit kann man 'nichts' waehlen! -->
     <!-- <%= f.date_select :birthday, :order => [:year, :month, :day], start_year: Time.now.year - 100, end_year: Time.now.year, :locale => 'de' %> -->
   </div>
   <div class="field">
