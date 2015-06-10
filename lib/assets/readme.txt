@@ -1,0 +1,1 @@
+Ordner fuer nicht projektspezifische Assets
