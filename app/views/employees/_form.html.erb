@@ -11,7 +11,15 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <%= f.fields_for(@employee.department) do |department_f| %>
+  <!-- TODO error messages ?? -->
+    <div class="field">
+    	<%= department_f.label :name %><br />
+    	<%= department_f.text_field :name %>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label :title, "Anrede" %><br>
     <!-- Zugriff auf Konstante in Klasse Employee -->
@@ -36,6 +44,7 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+  	<!-- TODO Ausgabe des ActiveRecord department namens! -->
     <%= f.label :department_id %><br>
     <%= f.select :department_id, Department.all.map {|d| [d.name, d.id]} %>
 	<%#<%= f.collection_select :department_id, Department.all oder @departments, :id, :name, prompt: t("text.choose") %>
@@ -43,7 +52,7 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment, size: "20x14" %> <!-- 20 Spalten, 14 Zeilen -->
+    <%= f.text_area :comment, size: "20x5" %> <!-- 20 Spalten, 5 Zeilen -->
   </div>
   <div class="field">
     <%= f.label :country %><br>

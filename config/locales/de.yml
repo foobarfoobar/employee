@@ -2,6 +2,7 @@ de:
   activerecord:
     models:
       employee: "Mitarbeiter"
+      department: "Abteilung"
     attributes:
       employee:
         title: "Titel"
@@ -11,7 +12,12 @@ de:
         email: "eMail"
         comment: "Kommentar"
         department_id: "Department ID"
+        freelancer: "Freelancer"
         country: "Land"
+        created_at: "Erstellt am"
+        updated_at: "Geaendert am"
+      department:
+        name: "Abteilungsname"
         created_at: "Erstellt am"
         updated_at: "Geaendert am"
   links:

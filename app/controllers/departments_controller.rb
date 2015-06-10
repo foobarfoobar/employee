@@ -1,6 +1,5 @@
 class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
-
   # GET /departments
   # GET /departments.json
   def index
@@ -60,15 +59,17 @@ class DepartmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_department
-      @department = Department.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def department_params
-      params.require(:department).permit(:name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def department_params
+    params.require(:department).permit(:name, employees_attributes: [ :id, :name ])
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_department
+    @department = Department.find(params[:id])
+  end
+
 end

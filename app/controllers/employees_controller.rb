@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
   # set_event is a method which will call always before show, update, edit and destroy.
   # somit kann edit leer bleiben und die Form ist trotzdem mit den jeweiligen Werten gefuellt
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  
   # GET /employees
   # GET /employees.json
   def index
@@ -30,6 +31,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
+    # @employee.department.build TODO nested stuff needed here??
   end
 
   # GET /employees/1/edit
@@ -57,8 +59,10 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+    @employee = Employee.find(params[:id])
+    # TODO error
     respond_to do |format|
-      if @employee.update(employee_params)
+      if @employee.update(employee_params) && @employee.department.update_attributes(params[:department])
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
         format.json { render :show, status: :ok, location: @employee }
       else
@@ -87,6 +91,8 @@ class EmployeesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def employee_params
-    params.require(:employee).permit(:firstname, :lastname, :birthday, :email, :comment)
+    params.require(:employee).permit(:firstname, :lastname, :birthday, :email, :comment, :freelancer,
+                                     :title, :department_id, :country)
   end
+  
 end
