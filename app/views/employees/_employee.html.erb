@@ -1,0 +1,26 @@
+	<%#<% @employees.each do |employee|  einschalten wenn  render "employee"  in index.html.erb genutzt wird%>
+<p>
+	<b><%= employee.firstname %>
+	<%= employee.lastname %></b>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.birthday") %>:</strong> <%= employee.birthday %>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.email") %>:</strong> <%= mail_to employee.email %>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.comment") %>:</strong> <%= employee.comment %>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.department_id") %>:</strong> <%= employee.department_id %>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.freelancer") %>:</strong> <%= employee.freelancer %>
+	<br />
+	<strong><%= t("activerecord.attributes.employee.country") %>:</strong> <%= employee.country %>
+	<br />
+	<!-- Braucht email-Spalte in DB; encode: um Scannen zu erschweren,
+	Werte: hex oder javascript 
+	<td><%= mail_to "employee.email", 'Nachricht senden', encode: "hex" %></td>
+	<!-- Button methode ist automatisch POST, macht routing-Probleme, daher method: get angeben 
+	<td><%= button_to t("links.show"), employee, :method => :get %></td>
+	<td><%= link_to t("links.edit"), edit_employee_path(employee) %></td>
+	<td><%= link_to t("links.destroy"), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+</p>
+	<%#<% end %>

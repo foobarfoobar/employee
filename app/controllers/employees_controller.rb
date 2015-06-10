@@ -19,6 +19,7 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       # format.json render json: @employees
+      # einbinden javascript
       format.js # index.js.erb  # Anweisung Javascript akzeptieren fuer AJAX
     end
   end

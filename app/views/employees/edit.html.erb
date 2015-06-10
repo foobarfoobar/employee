@@ -1,6 +1,4 @@
-<h1>Editing employee</h1>
-
-<%= render 'form' %>
+<%= render partial: 'form', locals: {title: "Ändern eines Mitarbeiters"} %>
 
 <%= link_to t("links.show"), @employee %> 
 <%= back_to_list %>

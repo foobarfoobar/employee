@@ -1,6 +1,7 @@
-<h1>Listing employees</h1>
+<h1><%= t("text.employee_list") %></h1>
 
-<%= link_to 'Number of employees', employees_path, remote: true %> <!-- verwenden von AJAX -->
+<%= link_to t("links.employee_number"), employees_path, remote: true %> <!-- verwenden von AJAX, Methode in index.js.erb
+	eingebunden im controller/index mit format.js # index.js.erb -->
 <table>
   <thead>
     <tr>
@@ -15,7 +16,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
@@ -28,7 +28,7 @@
         <td><%= employee.freelancer %></td>
         <td><%= employee.country %></td>
         <!-- Braucht email-Spalte in DB; encode: um Scannen zu erschweren, 
-        	Werte: hex oder javascript --> 
+        	Werte: hex oder javascript -->
         <td><%= mail_to "employee.email", 'Nachricht senden', encode: "hex" %></td>
         <!-- Button methode ist automatisch POST, macht routing-Probleme, daher method: get angeben -->
         <td><%= button_to t("links.show"), employee, :method => :get %></td>
@@ -38,7 +38,14 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
+<!-- Partial-Ersatz fuer Code oben, dann geht show und edit aber nicht.. -->
+<%#<%= render partial: @employees, spacer_template: "employee_ruler" %>
+<!-- da spacer_template verwendet wird, muss partial: extra angegeben werden! -->
+
+<%= link_to t("links.new_employee"), new_employee_path %>
+<!-- Laden shared partial -->
+<%#<%= render partial: "shared/copyright" %>
+<!-- Laden layout (shared) Partial -->
+<%= render partial: "shared/copyright", layout: "shared/copyright_full" %>

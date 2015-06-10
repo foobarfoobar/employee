@@ -1,6 +1,8 @@
+<h2>Mitarbeiter Details</h2>
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <strong><%= t("activerecord.attributes.employee.firstname") %>:</strong>
   <%= @employee.firstname %>
 </p>
@@ -38,7 +40,10 @@
 <p>
   <strong><%= t("activerecord.attributes.employee.comment") %>:</strong>
   <%= @employee.comment %>
-</p>
+</p> -->
+
+<!-- durch @employee wird partial geladen und employee steht dort als variable zur verfuegung -->
+<%= render @employee %> 
 
 <% content_for :sidebar do %>
   <%= render "links" %>

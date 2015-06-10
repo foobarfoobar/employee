@@ -1,3 +1,4 @@
+#encoding: utf-8
 de:
   activerecord:
     models:
@@ -25,9 +26,12 @@ de:
     edit: "Bearbeiten"
     destroy: "Loeschen"
     back_to_employees: "Zurück zur Liste"
+    new_employee: "Neuen Mitarbeiter anlegen"
+    employee_number: "Anzahl der Mitarbeiter"
   text:
     woman: "Frau"
     woman_doc: "Frau Dr."
     man: "Herr"
     man_doc: "Herr Dr."
     choose: "Bitte wählen"
+    employee_list: "Liste der Mitarbeiter"
