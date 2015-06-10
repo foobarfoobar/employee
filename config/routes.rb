@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'formwithoutmodel/input', as: :input # as: um input- und output- path zu haben
+
+  post 'formwithoutmodel/output', as: :output # Formulardaten werden mit POST versendet
+
   resources :employees
   resources :departments
 

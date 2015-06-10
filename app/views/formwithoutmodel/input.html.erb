@@ -1,0 +1,16 @@
+<h1>Formwithoutmodel#input</h1>
+<p>
+	Find me in app/views/formwithoutmodel/input.html.erb
+</p>
+<!-- jede HelperMethode fuer Form. ohne MOdel endet mit_tag -->
+<!-- form_tag erwartet als Param. Ziel (Action des Controllers), an den Werte aus Form geschickt werden sollen und einen Block
+in dem die Elemente generiert werden-->
+<%= form_tag output_path do %>
+<div class="field">
+	<!-- Beschriftung, erwartet Namen des Feldes, zu dessen Beschriftung Label dienen soll, und Beschriftung -->
+	<%= label_tag :example_text, "Beispiel Textfeld" %>
+	<!-- Textfeld mit default-Wert -->
+	<%= text_field_tag :example_text, "default Wert" %>
+</div>
+<%= submit_tag "go" %> <!-- go: Buttonbeschriftung -->
+<% end %>

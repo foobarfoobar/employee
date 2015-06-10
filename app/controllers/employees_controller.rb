@@ -62,6 +62,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     # TODO error
     respond_to do |format|
+      # Alle Werte eines Form. werden ueber den Hash params uebertragen!!
       if @employee.update(employee_params) && @employee.department.update_attributes(params[:department])
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
         format.json { render :show, status: :ok, location: @employee }

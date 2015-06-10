@@ -13,10 +13,12 @@
   <% end %>
   
   <%= f.fields_for(@employee.department) do |department_f| %>
-  <!-- TODO error messages ?? -->
+  <!-- TODO error messages ?? MERKE: Alle Werte eines Form. werden ueber den Hash params uebertragen!!! -->
     <div class="field">
-    	<%= department_f.label :name %><br />
+    	<%= department_f.label :name, "Foobar" %><br />
     	<%= department_f.text_field :name %>
+    	<!-- TODO Feld kann hier nicht geaendert werden!!  -->
+    	<%#<%= department_f.select :name, Department.all.map {|d| [d.name, d.id]} %>
     </div>
   <% end %>
   
@@ -44,9 +46,10 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-  	<!-- TODO Ausgabe des ActiveRecord department namens! -->
+  	<!-- TODO Ausgabe des ActiveRecord department namens! mit t("activerecord.attributes.department.name") ?-->
     <%= f.label :department_id %><br>
     <%= f.select :department_id, Department.all.map {|d| [d.name, d.id]} %>
+    <!-- TODO map raus aus Template, collection_select rein -->
 	<%#<%= f.collection_select :department_id, Department.all oder @departments, :id, :name, prompt: t("text.choose") %>
     <%#<%= f.collection_select :department_id, @departments geht nicht aber Department.all, :id, :name, prompt: t("text.choose") should work, but doesn't! TODO%>
   </div>
